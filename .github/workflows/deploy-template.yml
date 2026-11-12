@@ -36,7 +36,7 @@ jobs:
           username: ${{ secrets.VM_USER }}
           password: ${{ secrets.VM_PASSWORD }}
           source: "dist/**,package.json,package-lock.json"
-          target: "C:/apps/jamesc"
+          target: "C:/apps/james_c"
  
       # 3. Install production-only dependencies on the VM and restart PM2
       - name: Install prod dependencies and restart PM2 via SSH
@@ -47,7 +47,7 @@ jobs:
           password: ${{ secrets.VM_PASSWORD }}
           script: |
             powershell -Command "
-              cd C:\apps\jamesc;
+              cd C:\apps\james_c;
               npm ci --omit=dev;
               pm2 restart my-ts-app || pm2 start dist/index.js --name my-ts-app;
               pm2 save
