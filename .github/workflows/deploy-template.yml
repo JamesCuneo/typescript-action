@@ -37,7 +37,7 @@ jobs:
         run: test -f dist/index.js
        # 2. Copy compiled dist/, package.json, and package-lock.json to the VM
       - name: Copy build files to Windows VM via SCP
-        uses: appleboy/scp-action@v0.1.7
+        uses: appleboy/scp-action@v1.0.0
         with:
           host: ${{ secrets.VM_HOST }}
           username: ${{ secrets.VM_USER }}
